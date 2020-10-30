@@ -1,3 +1,10 @@
+BEM
+React Context API
+React Hooks
+React Router
+Firebase
+Stripe
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
