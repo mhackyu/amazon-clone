@@ -3,6 +3,7 @@ React Context API
 React Hooks
 React Router
 Firebase
+Firebase Pipeline
 Stripe
 
 # Getting Started with Create React App
