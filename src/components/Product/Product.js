@@ -3,7 +3,7 @@ import { useStateValue } from '../../store/StateProvider';
 import './Product.scss';
 
 function Product({ id, title, image, price, rating }) {
-  const [state, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
 
   const addToBasket = () => {
     dispatch({

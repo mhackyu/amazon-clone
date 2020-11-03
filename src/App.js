@@ -4,31 +4,37 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Checkout from './components/Checkout/Checkout';
+import Payment from './components/Payment/Payment';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import { auth } from './firebase';
 import { useStateValue } from './store/StateProvider';
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
 
   useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-      console.log('user: ', authUser);
+    const onAuthStateChanged = () => {
+      auth.onAuthStateChanged((authUser) => {
+        console.log('user: ', authUser);
+  
+        if (authUser) {
+          dispatch({
+            type: 'SET_USER',
+            user: authUser,
+          });
+        } else {
+          dispatch({
+            type: 'SET_USER',
+            user: null,
+          });
+        }
+      });
 
-      if (authUser) {
-        dispatch({
-          type: 'SET_USER',
-          user: authUser,
-        });
-      } else {
-        dispatch({
-          type: 'SET_USER',
-          user: null,
-        });
-      }
-    });
-  }, []);
+    };
+
+    onAuthStateChanged();
+  }, [dispatch]);
 
   return (
     <Router>
@@ -43,6 +49,10 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
           </Route>
           <Route path="/">
             <Header />
