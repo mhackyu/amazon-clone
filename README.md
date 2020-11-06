@@ -1,14 +1,19 @@
-BEM
-React Context API
-React Hooks
-React Router
-Firebase
-Firebase Pipeline
-Stripe
+# Amazon Clone (ReactJS)
 
-# Getting Started with Create React App
+Visit the demo here: https://clone-c960f.web.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://i.imgur.com/EeX9Qgz.png" />
+
+## Features
+- Payment gateway using Stripe API. Checkout the simple payment gateway made using nodejs [here](https://github.com/mhackyu/stripe-payment)
+- State management using React Context API
+- React Hooks
+- Form validations
+- Page navigation using React Router
+- BEM for CSS architechture
+- Firebase Hosting
+- User authentication using Firebase Auth. 
+- Firebase pipeline using Github actions to automatically deploy the new changes in the `main` branch.
 
 ## Available Scripts
 
