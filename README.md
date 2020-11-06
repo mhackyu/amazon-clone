@@ -5,7 +5,7 @@ Visit the demo here: https://clone-c960f.web.app/
 <img src="https://i.imgur.com/EeX9Qgz.png" />
 
 ## Features
-- Payment gateway using Stripe API. Checkout the simple payment gateway made using nodejs [here](https://github.com/mhackyu/stripe-payment)
+- Payment gateway using Stripe API. Check out the simple payment gateway developed using Node.js [here](https://github.com/mhackyu/stripe-payment)
 - State management using React Context API
 - React Hooks
 - Form validations
