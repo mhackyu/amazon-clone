@@ -1,7 +1,7 @@
 import React from 'react';
 import './CheckoutProduct.scss';
 
-function CheckoutProduct({ id, image, title, price, rating, onRemove }) {
+function CheckoutProduct({ id, image, title, price, rating, onRemove, hideRemoveButton = false }) {
 
   return (
     <div className="checkoutProduct">
@@ -20,7 +20,7 @@ function CheckoutProduct({ id, image, title, price, rating, onRemove }) {
               <p key={`${id}-${index}`}>🌟</p>
             ))}
         </div>
-        <button onClick={onRemove}>Remove from basket</button>
+        {!hideRemoveButton && <button onClick={onRemove}>Remove from basket</button>}
       </div>
     </div>
   );
