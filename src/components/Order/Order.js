@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Order.scss';
 import OrderItem from '../OrderItem/OrderItem';
 import { useStateValue } from '../../store/StateProvider';
-import { db } from '../../firebase';
+import { db } from '../../lib/firebase';
 
 function Order() {
   const [orders, setOrders] = useState([]);

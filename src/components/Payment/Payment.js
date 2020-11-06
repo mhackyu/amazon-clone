@@ -7,7 +7,7 @@ import { useStateValue } from '../../store/StateProvider';
 import { getBasketTotal } from '../../store/reducer';
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import httpClient from '../../lib/httpClient';
-import { db } from '../../firebase';
+import { db } from '../../lib/firebase';
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -132,6 +132,7 @@ function Payment() {
           <div className="payment__details">
             <form onSubmit={handleSubmit}>
               <CardElement options={CARD_OPTIONS} />
+              <small className="payment__note">Check available test cards <a href="https://stripe.com/docs/testing" target="_blank" rel="noreferrer">here</a></small>
 
               <div className="payment__price">
                 <button type="submit" disabled={!stripe || isLoading}>

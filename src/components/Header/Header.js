@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import './Header.scss';
 import { useStateValue } from '../../store/StateProvider';
-import { auth } from '../../firebase';
+import { auth } from '../../lib/firebase';
 
 function Header() {
   const [{ basket, user }] = useStateValue();

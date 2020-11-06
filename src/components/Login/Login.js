@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import './Login.scss';
-import { auth } from '../../firebase';
+import { auth } from '../../lib/firebase';
 
 function Login() {
   let history = useHistory();

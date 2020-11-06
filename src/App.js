@@ -15,7 +15,7 @@ import Payment from './components/Payment/Payment';
 import Order from './components/Order/Order';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import { auth } from './firebase';
+import { auth } from './lib/firebase';
 import { useStateValue } from './store/StateProvider';
 
 const stripePromise = loadStripe(
