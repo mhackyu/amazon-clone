@@ -47,10 +47,12 @@ function Header() {
             <span className="header__optionLineTwo">& Orders</span>
           </div>
         </Link>
-        <div className="header__option">
-          <span className="header__optionLineOne">Your</span>
-          <span className="header__optionLineTwo">Prime</span>
-        </div>
+        <a href="https://github.com/mhackyu/amazon-clone" target="_blank" rel="noreferrer">
+          <div className="header__option">
+            <span className="header__optionLineOne">Github</span>
+            <span className="header__optionLineTwo">Repository</span>
+          </div>
+        </a>
         <Link to="/checkout">
           <div className="header__optionBasket">
             <ShoppingBasketIcon />

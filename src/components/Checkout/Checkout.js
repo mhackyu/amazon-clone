@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Checkout.scss';
 import { useStateValue } from '../../store/StateProvider';
 import Subtotal from '../Subtotal/Subtotal';
@@ -36,6 +37,8 @@ function Checkout() {
               onRemove={() => handleRemoveFromBasket(index)}
             />
           ))}
+
+          {basket?.length === 0 && <p>No items found. Shop <Link to="/">here</Link>.</p>}
         </div>
       </div>
       <div className="checkout__right">

@@ -68,6 +68,7 @@ function App() {
             <Elements stripe={stripePromise}>
               <Payment />
             </Elements>
+            {/* {basket?.length === 0 && <Redirect to="/" />} */}
           </PrivateRoute>
           <Route path="/">
             <Header />

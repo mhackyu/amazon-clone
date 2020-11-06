@@ -71,6 +71,26 @@ function Payment() {
     history.replace('/orders');
   };
 
+  const CARD_OPTIONS = {
+    iconStyle: 'solid',
+    style: {
+      base: {
+        iconColor: 'black',
+        color: 'black',
+        fontWeight: 500,
+        fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+        fontSize: '18px',
+        fontSmoothing: 'antialiased',
+        ':-webkit-autofill': { color: '#fce883' },
+        '::placeholder': { color: 'grey' },
+      },
+      invalid: {
+        iconColor: 'red',
+        color: 'red',
+      },
+    },
+  };
+
   return (
     <div className="payment">
       <div className="payment__container">
@@ -111,23 +131,25 @@ function Payment() {
           </div>
           <div className="payment__details">
             <form onSubmit={handleSubmit}>
-              <CardElement />
+              <CardElement options={CARD_OPTIONS} />
 
               <div className="payment__price">
-                <CurrencyFormat
-                  renderText={(value) => (
-                    <>
-                      <h3>Total Order: {value}</h3>
-                    </>
-                  )}
-                  decimalScale={2}
-                  value={getBasketTotal(basket)}
-                  displayType={'text'}
-                  thousandSeparator={true}
-                  prefix={'$'}
-                />
                 <button type="submit" disabled={!stripe || isLoading}>
-                  {isLoading ? 'Please wait...' : 'Pay'}
+                  {isLoading ? 'Please wait...' : 'Pay '}
+                  {!isLoading && (
+                    <CurrencyFormat
+                      renderText={(value) => (
+                        <>
+                          {value}
+                        </>
+                      )}
+                      decimalScale={2}
+                      value={getBasketTotal(basket)}
+                      displayType={'text'}
+                      thousandSeparator={true}
+                      prefix={'$'}
+                    />
+                  )}
                 </button>
               </div>
             </form>
