@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import './App.css';
@@ -46,10 +51,10 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <Route path="/orders">
+          <PrivateRoute path="/orders">
             <Header />
             <Order />
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login />
           </Route>
@@ -60,12 +65,12 @@ function App() {
             <Header />
             <Checkout />
           </Route>
-          <Route path="/payment">
+          <PrivateRoute path="/payment">
             <Header />
             <Elements stripe={stripePromise}>
               <Payment />
             </Elements>
-          </Route>
+          </PrivateRoute>
           <Route path="/">
             <Header />
             <Home />
@@ -73,6 +78,27 @@ function App() {
         </Switch>
       </div>
     </Router>
+  );
+}
+
+function PrivateRoute({ children, ...rest }) {
+  const [{ user }] = useStateValue();
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        user ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
   );
 }
 
