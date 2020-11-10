@@ -2,9 +2,13 @@
 
 Visit the demo here: https://clone-c960f.web.app/
 
+> Check out the VueJS version [here](https://github.com/mhackyu/amazon-clone-vue).
+
 <img src="https://i.imgur.com/EeX9Qgz.png" />
 
 ## Features
+
+- Stripe Payment Client API
 - Payment gateway using Stripe API. Check out the simple payment gateway developed using Node.js [here](https://github.com/mhackyu/stripe-payment)
 - State management using React Context API
 - React Hooks
@@ -12,7 +16,7 @@ Visit the demo here: https://clone-c960f.web.app/
 - Page navigation using React Router
 - BEM for CSS architechture
 - Firebase Hosting
-- User authentication using Firebase Auth. 
+- User authentication using Firebase Auth
 - Firebase pipeline using Github actions to automatically deploy the new changes in the `main` branch.
 
 ## Available Scripts
